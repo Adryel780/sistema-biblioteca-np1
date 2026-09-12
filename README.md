@@ -99,5 +99,5 @@ Pré-requisitos
 Passo a Passo
 1. Clonar o Repositório:
    ```bash
-   git clone [https://github.com/UsuarioDeH2O/sistema-biblioteca-np1.git](https://github.com/UsuarioDeH2O/sistema-biblioteca-np1.git)
+   git clone https://github.com/UsuarioDeH2O/sistema-biblioteca-np1.git
 
