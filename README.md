@@ -3,13 +3,13 @@ Projeto de Banco de Dados NP1 - Sistema de Biblioteca com CRUD.
 
 1. Identificação Institucional
 
- *Curso: Ciência da Computação
- *Integrantes:
+ * Curso: Ciência da Computação
+ * Integrantes:
  
- *Nome: Adryel Miranda da silva - RA: R803Fj8 - Turma: CC4P17
- *Nome:
- *Nome:
- *Nome:
+ * Nome: Adryel Miranda da silva - RA: R803Fj8 - Turma: CC4P17
+ * Nome:
+ * Nome:
+ * Nome:
 
 2. Descrição do Projeto
 
