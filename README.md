@@ -6,9 +6,9 @@ Projeto de Banco de Dados NP1 - Sistema de Biblioteca com CRUD.
  * Curso: Ciência da Computação
  * Integrantes:
  
- * Nome: Adryel Miranda da silva - RA: R803Fj8 - Turma: CC4P17
- * Nome:
- * Nome:
+ * Nome: Adryel Miranda da silva - RA: R803Fj8 - Turma:CC4P17
+ * Nome: Matheus dos Santos Ribeiro Aguiar - RA: H785480 - Turna:CC3P17
+ * Nome: Gabriel Barbosa Rodrigues - RA: R852HH7 - Turma: CC4P17
  * Nome:
 
 2. Descrição do Projeto
@@ -25,7 +25,7 @@ Diagrama Entidade-Relacionamento (DER)
 Abaixo está o DER que ilustra o relacionamento conceitual e lógico entre as entidades `Usuario`, `Livro` e `Emprestimo`:
 ![Diagrama Entidade-Relacionamento](der-biblioteca.png)
 
-4. Scripts DDL
+Scripts DDL
 ```sql
 -- ==========================================================
 -- SCRIPT DDL - SISTEMA DE BIBLIOTECA
@@ -87,4 +87,17 @@ CREATE TABLE Emprestimo (
         REFERENCES Livro(id_livro)
 );
 GO
+```
+4. Guia de Instalação e Execução
+Instruções passo a passo para configurar e executar o projeto a partir de um repositório limpo:
+
+Pré-requisitos
+* Um Sistema de Gerenciamento de Banco de Dados (SGBD) compatível (como Microsoft SQL Server, MySQL ou SQLite).
+* Interpretador ou compilador da linguagem de back-end escolhida (C#, Python, TypeScript, PHP ou Java), **sem a utilização de frameworks de back-end**, conforme as restrições do trabalho.
+* Navegador web moderno para acessar a interface (desenvolvida em HTML5, CSS3, JavaScript puro, jQuery e Bootstrap).
+
+Passo a Passo
+1. Clonar o Repositório:
+   ```bash
+ git clone [https://github.com/UsuarioDeH2O/sistema-biblioteca-np1.git](https://github.com/UsuarioDeH2O/sistema-biblioteca-np1.git)
 
