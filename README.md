@@ -100,15 +100,11 @@ Este projeto utiliza:
 *Autenticação do Windows
 
 O projeto foi desenvolvido para acessar um banco de dados chamado:
-
 BibliotecaDB
 
 Instalar o Java
-
 É necessário ter o Java instalado.
-
 Recomendado:
-
 Java 17
 
 Para verificar se o Java já está instalado, abra o Prompt de Comando e execute:
@@ -116,9 +112,8 @@ Para verificar se o Java já está instalado, abra o Prompt de Comando e execute
 java -version
 ```
 Deve aparecer algo semelhante a:
-```text
 java version "17"
-```
+
 2. Instalar o NetBeans
 
 Instale o Apache NetBeans.
@@ -126,7 +121,6 @@ Instale o Apache NetBeans.
 Depois abra normalmente o NetBeans.
 
 O projeto utiliza Maven, então o NetBeans deve reconhecer automaticamente o arquivo:
-
 pom.xml
 
 Instalar o Microsoft SQL Server
