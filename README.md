@@ -157,11 +157,9 @@ Em:
 Authentication
 
 selecione:
-
 Windows Authentication
 
 Depois clique em:
-
 Connect
 
 Se a conexão funcionar, significa que a conta do Windows possui acesso ao SQL Server.
@@ -169,22 +167,22 @@ Se a conexão funcionar, significa que a conta do Windows possui acesso ao SQL S
 6. Criar o banco BibliotecaDB
 
 No SQL Server Management Studio, clique em:
-
 New Query
 
 Execute:
-
+```
 CREATE DATABASE BibliotecaDB;
 GO
-
+```
 Depois:
-
+```
 USE BibliotecaDB;
 GO
+```
 7. Criar a tabela LIVRO
 
 Execute:
-
+```
 CREATE TABLE LIVRO (
     id_livro INT IDENTITY(1,1) PRIMARY KEY,
     titulo VARCHAR(150) NOT NULL,
@@ -201,10 +199,11 @@ CREATE TABLE LIVRO (
         )
 );
 GO
+```
 8. Criar a tabela USUARIO
 
 Execute:
-
+```
 CREATE TABLE USUARIO (
     id_usuario INT IDENTITY(1,1) PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -213,6 +212,7 @@ CREATE TABLE USUARIO (
     data_cadastro DATE NOT NULL DEFAULT GETDATE()
 );
 GO
+```
 9. Criar a tabela EMPRESTIMO
 
 Execute:
