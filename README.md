@@ -216,7 +216,7 @@ GO
 9. Criar a tabela EMPRESTIMO
 
 Execute:
-
+```
 CREATE TABLE EMPRESTIMO (
     id_emprestimo INT IDENTITY(1,1) PRIMARY KEY,
 
@@ -241,14 +241,15 @@ CREATE TABLE EMPRESTIMO (
         CHECK (status IN ('Emprestado', 'Devolvido'))
 );
 GO
+```
 10. Conferir se as tabelas foram criadas
 
 Execute:
-
+```
 SELECT * FROM LIVRO;
 SELECT * FROM USUARIO;
 SELECT * FROM EMPRESTIMO;
-
+```
 Se não aparecer erro, o banco foi criado corretamente.
 
 11. Verificar se o SQL Server está usando TCP/IP
@@ -260,70 +261,55 @@ jdbc:sqlserver://localhost:1433;
 Por isso, o SQL Server precisa aceitar conexão TCP/IP.
 
 Abra:
-
 SQL Server Configuration Manager
 
 Procure:
-
 SQL Server Network Configuration
 
 Depois:
-
 Protocols for MSSQLSERVER
 
 ou algo semelhante ao nome da instância instalada.
 
 Verifique se:
-
 TCP/IP
 
 está como:
-
 Enabled
 
 Caso esteja desabilitado:
-
 Clique com o botão direito.
 Clique em Enable.
 Reinicie o serviço do SQL Server.
+
 12. Verificar a porta 1433
 
 Abra novamente:
-
 SQL Server Configuration Manager
 
 Vá em:
-
 SQL Server Network Configuration
 
 Depois:
-
 Protocols for MSSQLSERVER
 
 Clique duas vezes em:
-
 TCP/IP
 
 Abra a aba:
-
 IP Addresses
 
 Procure:
-
 IPAll
 
 Em:
-
 TCP Port
 
 deixe:
-
 1433
 
 Se existir valor em:
-
 TCP Dynamic Ports
-
 pode ser necessário apagar esse valor.
 
 Depois reinicie o SQL Server.
@@ -333,7 +319,6 @@ Depois reinicie o SQL Server.
 O projeto utiliza o JDBC Driver da Microsoft para conectar o Java ao SQL Server.
 
 Baixe o:
-
 Microsoft JDBC Driver for SQL Server
 
 O projeto utiliza uma versão compatível com Java 11 ou superior.
@@ -361,19 +346,15 @@ Dentro da pasta do JDBC baixado, procure uma estrutura semelhante a:
 sqljdbc_13.4
 
 Depois:
-
 auth
 
 Depois:
-
 x64
 
 Dentro dessa pasta deverá existir um arquivo semelhante a:
-
 mssql-jdbc_auth-13.4.0.x64.dll
 
 Por exemplo, no computador original do projeto o caminho ficou parecido com:
-
 C:\sqljdbc_13.4.0.0_ptb\sqljdbc_13.4\ptb\auth\x64
 
 No computador de outra pessoa provavelmente será diferente.
@@ -387,23 +368,18 @@ Clique com o botão direito no projeto:
 BibliotecaDb
 
 Depois:
-
 Properties
 
 Procure:
-
 Run
 
 Em:
-
 VM Options
 
 adicione:
-
 -Djava.library.path=CAMINHO_DA_PASTA_AUTH_X64
 
 Por exemplo:
-
 -Djava.library.path=C:\sqljdbc_13.4.0.0_ptb\sqljdbc_13.4\ptb\auth\x64
 
 É importante colocar apenas a pasta.
@@ -411,37 +387,30 @@ Por exemplo:
 Não coloque o nome do arquivo .dll.
 
 Correto:
-
 C:\sqljdbc_13.4.0.0_ptb\sqljdbc_13.4\ptb\auth\x64
 
 Evite:
-
 C:\sqljdbc_13.4.0.0_ptb\sqljdbc_13.4\ptb\auth\x64\mssql-jdbc_auth.dll
 16. VM Options recomendadas
 
 Pode utilizar:
-
 -Djava.library.path=C:\CAMINHO\DO\JDBC\auth\x64 -Dfile.encoding=UTF-8 --enable-native-access=ALL-UNNAMED
 
 A pessoa deverá substituir:
-
 C:\CAMINHO\DO\JDBC\auth\x64
 
 pelo caminho real no computador dela.
-
 O:
 
 -Dfile.encoding=UTF-8
 
 ajuda com caracteres como:
-
 á
 ã
 é
 ç
 
 O:
-
 --enable-native-access=ALL-UNNAMED
 
 pode evitar alguns avisos relacionados ao acesso nativo nas versões mais recentes do Java.
@@ -449,16 +418,15 @@ pode evitar alguns avisos relacionados ao acesso nativo nas versões mais recent
 17. Verificar a classe Conexao
 
 O projeto utiliza uma conexão parecida com:
-
+```
 private static final String URL =
         "jdbc:sqlserver://localhost:1433;"
         + "databaseName=BibliotecaDB;"
         + "integratedSecurity=true;"
         + "encrypt=true;"
         + "trustServerCertificate=true;";
-
+```
 Essa configuração significa:
-
 localhost
 
 O banco está no próprio computador.
@@ -498,11 +466,9 @@ o Java utilizará:
 DESKTOP-ABC\Maria
 
 Se for:
-
 NOTEBOOK-JOAO\Joao
 
 o Java utilizará:
-
 NOTEBOOK-JOAO\Joao
 
 Isso acontece por causa de:
@@ -570,11 +536,9 @@ deverá conter algo parecido com:
 23. Executar o programa
 
 Depois:
-
 Run Project
 
 ou pressione:
-
 F6
 
 Se estiver tudo configurado corretamente, deverá aparecer algo parecido com:
@@ -583,7 +547,7 @@ Conexão realizada com sucesso!
 24. Testar o cadastro de livro
 
 Por exemplo:
-
+```
 Livro livro = new Livro(
         "O Senhor dos Anéis",
         "J. R. R. Tolkien",
@@ -591,34 +555,37 @@ Livro livro = new Livro(
         3,
         3
 );
-
+```
+```
 LivroDao livroDao = new LivroDao();
 
 livroDao.cadastrar(livro);
-
+```
 Depois consulte:
-
+```
 SELECT * FROM LIVRO;
-
+```
 Deverá aparecer o livro cadastrado.
 
 25. Testar o cadastro de usuário
 
 Por exemplo:
-
+```
 Usuario usuario = new Usuario(
         "Matheus",
         "matheus@email.com",
         "15999999999"
 );
-
+```
+```
 UsuarioDao usuarioDao = new UsuarioDao();
 
 usuarioDao.cadastrar(usuario);
-
+```
 Depois:
-
+```
 SELECT * FROM USUARIO;
+```
 26. Testar empréstimo
 
 Depois de existir pelo menos:
@@ -629,7 +596,7 @@ Depois de existir pelo menos:
 é possível realizar um empréstimo.
 
 Por exemplo:
-
+```
 Emprestimo emprestimo = new Emprestimo(
         1,
         1,
@@ -639,15 +606,16 @@ Emprestimo emprestimo = new Emprestimo(
 EmprestimoDao emprestimoDao = new EmprestimoDao();
 
 emprestimoDao.realizarEmprestimo(emprestimo);
+```
 
 Depois consulte:
-
+```
 SELECT * FROM EMPRESTIMO;
-
+```
 E:
-
+```
 SELECT * FROM LIVRO;
-
+```
 A quantidade disponível deverá diminuir.
 
 Por exemplo:
@@ -661,13 +629,13 @@ quantidade_disponivel = 2
 27. Testar devolução
 
 Por exemplo:
-
+```
 emprestimoDao.devolverLivro(1);
-
+```
 Depois:
-
+```
 SELECT * FROM EMPRESTIMO;
-
+```
 O status deverá ficar:
 
 Devolvido
@@ -679,12 +647,13 @@ data_devolucao_real
 deverá receber a data da devolução.
 
 Além disso:
-
+```
 SELECT * FROM LIVRO;
-
+```
 deverá mostrar novamente:
 
 quantidade_disponivel = 3
+
 28. Problema: Login failed
 
 Se aparecer algo relacionado a:
@@ -696,7 +665,6 @@ ou:
 Integrated authentication failed
 
 verifique primeiro se consegue entrar no SSMS usando:
-
 Windows Authentication
 
 Se não conseguir, o problema está na configuração ou nas permissões do SQL Server.
@@ -704,38 +672,30 @@ Se não conseguir, o problema está na configuração ou nas permissões do SQL 
 29. Problema: DLL não encontrada
 
 Se aparecer algo parecido com:
-
 This driver is not configured for integrated authentication
 
 ou:
-
 Unable to load mssql-jdbc_auth
 
 o problema provavelmente está no caminho:
-
 -Djava.library.path
 
 Confira novamente onde está a pasta:
-
 auth\x64
+
 30. Problema: conexão recusada na porta 1433
 
 Se aparecer:
-
 Connection refused
 
 ou erro semelhante de TCP/IP, verifique:
-
 TCP/IP habilitado
 
 e:
-
 porta 1433
 
 Também verifique se o serviço:
-
 SQL Server
-
 está iniciado.
 
 31. Problema: localhost não funciona
@@ -743,21 +703,21 @@ está iniciado.
 Em algumas instalações, o SQL Server pode estar utilizando uma instância diferente.
 
 Por exemplo:
-
 SQLEXPRESS
 
 Nesse caso, dependendo da configuração, pode ser necessário ajustar a conexão.
 
 Por exemplo:
-
+```
 jdbc:sqlserver://localhost;
 instanceName=SQLEXPRESS;
 databaseName=BibliotecaDB;
 integratedSecurity=true;
-
+```
 Porém, para facilitar a entrega do trabalho, o recomendado é configurar o SQL Server para utilizar:
 
 localhost:1433
+
 32. Estrutura recomendada para entregar o trabalho
 
 A pasta do projeto poderia ficar assim:
@@ -776,11 +736,10 @@ BibliotecaDb/
 └── README.txt
 
 No arquivo:
-
 BibliotecaDB.sql
 
 coloque:
-
+```
 CREATE DATABASE BibliotecaDB;
 GO
 
@@ -837,6 +796,7 @@ CREATE TABLE EMPRESTIMO (
         CHECK (status IN ('Emprestado', 'Devolvido'))
 );
 GO
+```
 
 Assim o outro aluno não precisa criar cada tabela manualmente.
 
