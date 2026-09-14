@@ -97,7 +97,9 @@ Pré-requisitos
 * Navegador web moderno para acessar a interface (desenvolvida em HTML5, CSS3, JavaScript puro, jQuery e Bootstrap).
 
 Passo a Passo
-1. Clonar o Repositório:
-   ```bash
-   git clone https://github.com/UsuarioDeH2O/sistema-biblioteca-np1.git
 
+1. **Clonar o Repositório:**
+Abra o terminal e execute o comando abaixo para baixar o projeto:
+```bash
+git clone [https://github.com/Adryel780/sistema-biblioteca-np1.git](https://github.com/Adryel780/sistema-biblioteca-np1.git)
+cd sistema-biblioteca-np1
