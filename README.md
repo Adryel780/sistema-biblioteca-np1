@@ -101,5 +101,5 @@ Passo a Passo
 1. **Clonar o Repositório:**
 Abra o terminal e execute o comando abaixo para baixar o projeto:
 ```bash
-git clone (https://github.com/Adryel780/sistema-biblioteca-np1.git)
+git clone https://github.com/Adryel780/sistema-biblioteca-np1.git
 cd sistema-biblioteca-np1
