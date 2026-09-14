@@ -145,6 +145,7 @@ Também é recomendado instalar o:
 SQL Server Management Studio
 
 conhecido como: SSMS
+
 Ele será utilizado para criar e visualizar o banco de dados.
 
 Depois de instalar, abra o SSMS.
