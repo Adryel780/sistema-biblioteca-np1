@@ -92,10 +92,10 @@ GO
 
 Este projeto utiliza:
 
-*Java 17
-*NetBeans
-*Maven
-*Microsoft SQL Server
+* Java 17
+* NetBeans
+* Maven
+* Microsoft SQL Server
 *JDBC Driver da Microsoft
 *Autenticação do Windows
 
