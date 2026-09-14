@@ -92,12 +92,12 @@ GO
 
 Este projeto utiliza:
 
-Java 17
-NetBeans
-Maven
-Microsoft SQL Server
-JDBC Driver da Microsoft
-Autenticação do Windows
+*Java 17
+*NetBeans
+*Maven
+*Microsoft SQL Server
+*JDBC Driver da Microsoft
+*Autenticação do Windows
 
 O projeto foi desenvolvido para acessar um banco de dados chamado:
 ```text
