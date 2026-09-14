@@ -89,17 +89,16 @@ CREATE TABLE Emprestimo (
 GO
 ```
 4. Guia de Instalação e Execução
-Instruções passo a passo para configurar e executar o projeto a partir de um repositório limpo:
 
-Pré-requisitos
-* Um Sistema de Gerenciamento de Banco de Dados (SGBD) compatível (como Microsoft SQL Server, MySQL ou SQLite).
-* Interpretador ou compilador da linguagem de back-end escolhida (C#, Python, TypeScript, PHP ou Java), **sem a utilização de frameworks de back-end**, conforme as restrições do trabalho.
-* Navegador web moderno para acessar a interface (desenvolvida em HTML5, CSS3, JavaScript puro, jQuery e Bootstrap).
+Este projeto utiliza:
 
-Passo a Passo
+Java 17
+NetBeans
+Maven
+Microsoft SQL Server
+JDBC Driver da Microsoft
+Autenticação do Windows
 
-1. **Clonar o Repositório:**
-Abra o terminal e execute o comando abaixo para baixar o projeto:
-```bash
-git clone https://github.com/Adryel780/sistema-biblioteca-np1.git
-cd sistema-biblioteca-np1
+O projeto foi desenvolvido para acessar um banco de dados chamado:
+```text
+BibliotecaDB
