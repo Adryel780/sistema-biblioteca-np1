@@ -142,13 +142,9 @@ NOTEBOOK\Maria
 4. Instalar o SQL Server Management Studio
 
 Também é recomendado instalar o:
-
 SQL Server Management Studio
 
-conhecido como:
-
-SSMS
-
+conhecido como: SSMS
 Ele será utilizado para criar e visualizar o banco de dados.
 
 Depois de instalar, abra o SSMS.
