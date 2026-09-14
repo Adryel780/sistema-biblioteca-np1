@@ -100,17 +100,17 @@ Este projeto utiliza:
 *Autenticação do Windows
 
 O projeto foi desenvolvido para acessar um banco de dados chamado:
-```text
+
 BibliotecaDB
-```
+
 Instalar o Java
 
 É necessário ter o Java instalado.
 
 Recomendado:
-```text
+
 Java 17
-```
+
 Para verificar se o Java já está instalado, abra o Prompt de Comando e execute:
 ```text
 java -version
@@ -126,37 +126,35 @@ Instale o Apache NetBeans.
 Depois abra normalmente o NetBeans.
 
 O projeto utiliza Maven, então o NetBeans deve reconhecer automaticamente o arquivo:
-```text
+
 pom.xml
-```
+
 Instalar o Microsoft SQL Server
 
 É necessário instalar o Microsoft SQL Server.
 
 Durante a instalação, certifique-se de permitir o uso de:
-```text
+
 Windows Authentication
-```
+
 A autenticação do sistema utiliza a própria conta do Windows da pessoa que estiver executando o projeto.
 
 Por exemplo:
-```text
+
 DESKTOP-123ABC\Joao
-```
 ou
-```text
 NOTEBOOK\Maria
-```
+
 4. Instalar o SQL Server Management Studio
 
 Também é recomendado instalar o:
-```text
+
 SQL Server Management Studio
-```
+
 conhecido como:
-```text
+
 SSMS
-```
+
 Ele será utilizado para criar e visualizar o banco de dados.
 
 Depois de instalar, abra o SSMS.
