@@ -45,14 +45,14 @@ GO
 -- Armazena o acervo e o controle de quantidade de exemplares
 -- ----------------------------------------------------------
 CREATE TABLE LIVRO (
-    id_livro INT IDENTITY(1,1) PRIMARY KEY,       -- Identificador único do livro (Chave Primária)
-    titulo VARCHAR(150) NOT NULL,                 -- Título da obra
-    autor VARCHAR(100) NOT NULL,                  -- Nome do autor
-    ano_publicacao INT,                           -- Ano em que o livro foi publicado
-    quantidade_total INT NOT NULL,                -- Quantidade total de exemplares
-    quantidade_disponivel INT NOT NULL,           -- Quantidade de exemplares disponíveis para empréstimo
+    id_livro INT IDENTITY(1,1) PRIMARY KEY,        -- Identificador único do livro (Chave Primária autoincrementável)
+    titulo VARCHAR(150) NOT NULL,                  -- Título da obra (obrigatório)
+    autor VARCHAR(100) NOT NULL,                   -- Nome do autor da obra (obrigatório)
+    ano_publicacao INT,                            -- Ano em que o livro foi publicado
+    quantidade_total INT NOT NULL,                 -- Quantidade total de exemplares adquiridos pela biblioteca
+    quantidade_disponivel INT NOT NULL,            -- Quantidade de exemplares disponíveis atualmente para empréstimo
 
-    -- Restrição para garantir consistência nas quantidades
+    -- Restrição para garantir consistência nas quantidades (não podem ser negativas e a disponível não pode superar a total)
     CONSTRAINT CK_LIVRO_QUANTIDADE
         CHECK (
             quantidade_total >= 0
@@ -67,11 +67,11 @@ GO
 -- Armazena os dados cadastrais dos usuários da biblioteca
 -- ----------------------------------------------------------
 CREATE TABLE USUARIO (
-    id_usuario INT IDENTITY(1,1) PRIMARY KEY,     -- Identificador único do usuário (Chave Primária)
-    nome VARCHAR(100) NOT NULL,                   -- Nome completo do usuário
-    email VARCHAR(100) NOT NULL UNIQUE,           -- E-mail de contato (único)
-    telefone VARCHAR(20),                         -- Telefone de contato
-    data_cadastro DATE NOT NULL DEFAULT GETDATE() -- Data de cadastro do usuário no sistema
+    id_usuario INT IDENTITY(1,1) PRIMARY KEY,      -- Identificador único do usuário (Chave Primária autoincrementável)
+    nome VARCHAR(100) NOT NULL,                    -- Nome completo do usuário (obrigatório)
+    email VARCHAR(100) NOT NULL UNIQUE,            -- E-mail de contato do usuário (obrigatório e único no sistema)
+    telefone VARCHAR(20),                          -- Telefone de contato do usuário
+    data_cadastro DATE NOT NULL DEFAULT GETDATE()  -- Data de cadastro do usuário (preenchida automaticamente com a data atual)
 );
 GO
 
@@ -80,25 +80,25 @@ GO
 -- Registra as transações de empréstimos de livros aos usuários
 -- ----------------------------------------------------------
 CREATE TABLE EMPRESTIMO (
-    id_emprestimo INT IDENTITY(1,1) PRIMARY KEY,  -- Identificador único do empréstimo (Chave Primária)
-    id_usuario INT NOT NULL,                      -- Chave estrangeira referenciando o usuário
-    id_livro INT NOT NULL,                        -- Chave estrangeira referenciando o livro
-    data_emprestimo DATE NOT NULL DEFAULT GETDATE(), -- Data em que o livro foi retirado
-    data_devolucao_prevista DATE NOT NULL,        -- Data prevista para a devolução
-    data_devolucao_real DATE NULL,                -- Data em que o livro foi devolvido (nulo se pendente)
+    id_emprestimo INT IDENTITY(1,1) PRIMARY KEY,   -- Identificador único do empréstimo (Chave Primária autoincrementável)
+    id_usuario INT NOT NULL,                       -- Chave estrangeira que referencia o usuário que realizou o empréstimo
+    id_livro INT NOT NULL,                         -- Chave estrangeira que referencia o livro emprestado
+    data_emprestimo DATE NOT NULL DEFAULT GETDATE(), -- Data em que o livro foi retirado (padrão: data atual)
+    data_devolucao_prevista DATE NOT NULL,         -- Data limite estipulada para a devolução do livro
+    data_devolucao_real DATE NULL,                 -- Data em que o livro foi efetivamente devolvido (nulo se ainda estiver emprestado)
     status VARCHAR(20) NOT NULL DEFAULT 'Emprestado', -- Status atual do empréstimo ('Emprestado' ou 'Devolvido')
 
-    -- Restrição de Integridade Referencial para Usuário
+    -- Restrição de Integridade Referencial para Usuário (garante que o usuário existe)
     CONSTRAINT FK_EMPRESTIMO_USUARIO
         FOREIGN KEY (id_usuario)
         REFERENCES USUARIO(id_usuario),
 
-    -- Restrição de Integridade Referencial para Livro
+    -- Restrição de Integridade Referencial para Livro (garante que o livro existe)
     CONSTRAINT FK_EMPRESTIMO_LIVRO
         FOREIGN KEY (id_livro)
         REFERENCES LIVRO(id_livro),
 
-    -- Restrição para garantir valores válidos no status
+    -- Restrição para garantir que o status aceite apenas valores permitidos
     CONSTRAINT CK_EMPRESTIMO_STATUS
         CHECK (status IN ('Emprestado', 'Devolvido'))
 );
