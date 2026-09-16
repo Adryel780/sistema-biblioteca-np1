@@ -862,3 +862,16 @@ Esta seção apresenta as capturas de tela (prints) que demonstram o funcionamen
 
 Figura 1 — Tela Inicial / Dashboard do Sistema
 ![Tela do Painel](imagens/Painel.png)
+Descrição: Visão geral da interface principal da aplicação web da biblioteca, exibindo o painel de controle com os indicadores consolidados de acervo, leitores cadastrados e empréstimos ativos em andamento.
+
+Figura 2 — Gestão do Acervo
+![Tela de Acervo](imagens/Livros.png)
+Descrição: Interface de listagem de livros. Exibe os títulos cadastrados, seus autores, quantidade de exemplares totais e disponíveis, além de disponibilizar barra de busca e botões para criar, editar e excluir registros.
+
+Figura 3 — Gestão de Leitores
+![Tela de Leitores](imagens/Usuario.png)
+Descrição: Tela de controle de usuários. Lista os leitores cadastrados com seus respectivos dados de contato e data de cadastro, permitindo a busca, inserção, atualização e exclusão de perfis.
+
+Figura 4 — Controle de Empréstimos
+![Tela de Empréstimos](imagens/Empretimo.png)
+Descrição: Interface para registro e monitoramento de empréstimos. Demonstra o vínculo entre um leitor e um livro, acompanhando as datas de retirada, devolução prevista e o status atual da transação.
