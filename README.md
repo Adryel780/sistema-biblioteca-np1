@@ -861,3 +861,4 @@ Assim, o HttpServer é utilizado somente como recurso nativo do Java para recebe
 Esta seção apresenta as capturas de tela (prints) que demonstram o funcionamento da interface do sistema, a execução das operações de CRUD e a persistência dos dados no banco de dados.
 
 Figura 1 — Tela Inicial / Dashboard do Sistema
+![Tela do Painel](imagens/Painel.png)
