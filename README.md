@@ -875,3 +875,7 @@ Descrição: Tela de controle de usuários. Lista os leitores cadastrados com se
 Figura 4 — Controle de Empréstimos
 ![Tela de Empréstimos](imagens/Empretimo.png)
 Descrição: Interface para registro e monitoramento de empréstimos. Demonstra o vínculo entre um leitor e um livro, acompanhando as datas de retirada, devolução prevista e o status atual da transação.
+
+Figura 5 — Registros no Banco de Dados
+![Persistência no Banco](imagens/Banco_de_Dados.png)
+Descrição: Consulta executada diretamente no gerenciador do banco de dados, comprovando que as informações manipuladas pela interface web (CRUD) estão sendo persistidas e armazenadas corretamente nas tabelas do sistema.
