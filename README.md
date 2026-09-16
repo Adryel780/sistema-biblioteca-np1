@@ -738,18 +738,18 @@ localhost:1433
 
 A pasta do projeto poderia ficar assim:
 
-BibliotecaDb/
-│
-├── src/
-│   └── main/
-│       └── java/
-│
-├── database/
-│   └── BibliotecaDB.sql
-│
-├── pom.xml
-│
-└── README.txt
+*BibliotecaDb/
+* │
+* ├── src/
+* │   └── main/
+* │       └── java/
+* │
+* ├── database/
+* │   └── BibliotecaDB.sql
+* │
+* ├── pom.xml
+* │
+* └── README.txt
 
 No arquivo:
 BibliotecaDB.sql
@@ -840,3 +840,24 @@ PASSOS PARA EXECUTAR O PROJETO
 11. Abrir o projeto BibliotecaDb no NetBeans.
 12. Aguardar o Maven baixar as dependências.
 13. Executar o projeto.
+Acesso ao Sistema
+Após iniciar o projeto pelo NetBeans, o servidor será executado localmente na porta 8080.
+
+Para acessar a interface do Sistema de Biblioteca, abra o navegador e acesse:
+
+http://localhost:8080/
+> Importante: o programa Java deve estar em execução para que o site funcione, pois o servidor HTTP e a comunicação com o banco de dados são realizados pelo back-end Java.
+Servidor HTTP
+
+O projeto utiliza a classe HttpServer, disponível no pacote com.sun.net.httpserver do próprio JDK, para permitir a comunicação entre a interface web e o back-end Java.
+
+O HttpServer não é um framework de desenvolvimento, como Spring Boot, Jakarta EE ou outros frameworks web. Ele é uma API fornecida pelo próprio Java/JDK para criação de um servidor HTTP simples.
+
+Neste projeto, as rotas HTTP, o tratamento das requisições, as validações, a conversão dos dados e as respostas são implementadas manualmente no código Java. Da mesma forma, o acesso ao SQL Server é realizado diretamente por meio de JDBC e PreparedStatement, sem utilização de ORM ou framework de persistência.
+
+Assim, o HttpServer é utilizado somente como recurso nativo do Java para receber e responder requisições HTTP, enquanto toda a lógica da aplicação e o acesso ao banco de dados foram implementados diretamente no projeto.
+
+5. Evidências Visuais
+Esta seção apresenta as capturas de tela (prints) que demonstram o funcionamento da interface do sistema, a execução das operações de CRUD e a persistência dos dados no banco de dados.
+
+Figura 1 — Tela Inicial / Dashboard do Sistema
